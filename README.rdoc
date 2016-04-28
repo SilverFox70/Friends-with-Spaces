@@ -40,7 +40,7 @@ Next, migrate and seed the database:
 <tt>rake db:seed</tt>
 <tt>rails s</tt>
 
-No you can visit <tt>http:/localhost:3000/admin</tt> and login as the default user:
+Now you can visit <tt>http:/localhost:3000/admin</tt> and login as the default user:
 
 User = admin@example.com
 Password = password

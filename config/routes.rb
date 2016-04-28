@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_profiles
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
