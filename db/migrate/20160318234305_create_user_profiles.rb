@@ -1,6 +1,8 @@
 class CreateUserProfiles < ActiveRecord::Migration
   def change
     create_table :user_profiles do |t|
+      t.belongs_to: user, index: true
+      
       t.text :first_name, presence: true
       t.text :last_name, presence: true
       t.text :telephone_number, {presence: true,
