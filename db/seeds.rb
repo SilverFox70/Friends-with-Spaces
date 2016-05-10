@@ -13,11 +13,11 @@ users = [{email: "frog@mail.com", password: "qwertyui"},
 	     {email: "Adam@example.com", password: "allnumbers"},
 	     {email: "Smith@gmail.com", password: "12345678"}]
 
-user_profs = [{first_name: "John", last_name: "Doe", telephopne_number: "555-212-9984"}, 
-			  {first_name: "Sara", last_name: "Kay", telephopne_number: "555-333-4444"},
-			  {first_name: "Dick", last_name: "Snow", telephopne_number: "555-555-6767"},
-			  {first_name: "Angi", last_name: "Pullman", telephopne_number: "555-599-5837"},
-			  {first_name: "Rob", last_name: "Zombie", telephopne_number: "555-743-1423"}]
+user_profs = [{first_name: "John", last_name: "Doe", telephone_number: "555-212-9984"}, 
+			  {first_name: "Sara", last_name: "Kay", telephone_number: "555-333-4444"},
+			  {first_name: "Dick", last_name: "Snow", telephone_number: "555-555-6767"},
+			  {first_name: "Angi", last_name: "Pullman", telephone_number: "555-599-5837"},
+			  {first_name: "Rob", last_name: "Zombie", telephone_number: "555-743-1423"}]
 
 places = [{name: "Chatty Chalet", description: "Quaint but talkative hideaway", 
 	       location: "San Francisco",owner_id: 1},

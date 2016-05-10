@@ -64,13 +64,11 @@ ActiveRecord::Schema.define(version: 20160428222822) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "place_id"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "open_times", ["place_id"], name: "index_open_times_on_place_id", using: :btree
-  add_index "open_times", ["user_id"], name: "index_open_times_on_user_id", using: :btree
 
   create_table "pictures", force: :cascade do |t|
     t.string   "img_url"
@@ -133,7 +131,6 @@ ActiveRecord::Schema.define(version: 20160428222822) do
 
   add_foreign_key "bookings", "places"
   add_foreign_key "open_times", "places"
-  add_foreign_key "open_times", "users"
   add_foreign_key "pictures", "places"
   add_foreign_key "reviews", "places"
 end
