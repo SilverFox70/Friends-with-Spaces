@@ -2,22 +2,22 @@
 
 <p>
   <strong>Start time:</strong>
-  <%= @booking.start_time %>
+  <%= @booking.start_time.to_formatted_s(:long_ordinal) %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @booking.end_time %>
+  <%= @booking.end_time.to_formatted_s(:long_ordinal) %>
 </p>
 
 <p>
   <strong>Place:</strong>
-  <%= @booking.place %>
+  <%= @booking.place.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @booking.user %>
+  <%= "#{@booking.guest.first_name} #{@booking.guest.last_name}"%>
 </p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
