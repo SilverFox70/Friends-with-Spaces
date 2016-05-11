@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Thumb</th>
       <th>Img url</th>
       <th>Place</th>
       <th colspan="3"></th>
@@ -14,8 +15,9 @@
   <tbody>
     <% @pictures.each do |picture| %>
       <tr>
+        <td><%= image_tag(picture.img_url, size: "64" ) %></td>
         <td><%= picture.img_url %></td>
-        <td><%= picture.place %></td>
+        <td><%= picture.place.name %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
         <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
