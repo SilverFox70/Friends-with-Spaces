@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :open_times
-  resources :reviews
-  resources :bookings
-  resources :pictures
-  resources :places
+  resources :places do
+    resources :open_times
+    resources :reviews
+    resources :bookings
+    resources :pictures
+  end
   resources :user_profiles
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
