@@ -16,10 +16,9 @@
   <tbody>
     <% @open_times.each do |open_time| %>
       <tr>
-        <td><%= open_time.start_time %></td>
-        <td><%= open_time.end_time %></td>
-        <td><%= open_time.place %></td>
-        <td><%= open_time.user %></td>
+        <td><%= open_time.start_time.to_formatted_s(:long_ordinal) %></td>
+        <td><%= open_time.end_time.to_formatted_s(:long_ordinal) %></td>
+        <td><%= open_time.place.name %></td>
         <td><%= link_to 'Show', open_time %></td>
         <td><%= link_to 'Edit', edit_open_time_path(open_time) %></td>
         <td><%= link_to 'Destroy', open_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>

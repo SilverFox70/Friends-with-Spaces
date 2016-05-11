@@ -12,13 +12,9 @@
 
 <p>
   <strong>Place:</strong>
-  <%= @open_time.place %>
+  <%= @open_time.place.name %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @open_time.user %>
-</p>
 
 <%= link_to 'Edit', edit_open_time_path(@open_time) %> |
 <%= link_to 'Back', open_times_path %>

@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <h3>For: <%= @open_time.place.name %></h3>
   <div class="field">
     <%= f.label :start_time %><br>
     <%= f.datetime_select :start_time %>
@@ -20,13 +20,9 @@
     <%= f.datetime_select :end_time %>
   </div>
   <div class="field">
-    <%= f.label :place_id %><br>
-    <%= f.text_field :place_id %>
+    <%= f.hidden_field :place_id %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
