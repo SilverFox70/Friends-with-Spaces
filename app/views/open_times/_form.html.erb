@@ -1,5 +1,5 @@
-<%= form_for(@open_time) do |f| %>
-  <% if @open_time.errors.any? %>
+<%= form_for([@place, @place.open_times.build]) do |f| %>
+  <% if !@open_time.nil? && @open_time.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@open_time.errors.count, "error") %> prohibited this open_time from being saved:</h2>
 
@@ -10,7 +10,15 @@
       </ul>
     </div>
   <% end %>
-  <h3>For: <%= @open_time.place.name %></h3>
+  <h3>
+    Set Available times for:
+    <% if @open_time.nil? %>
+      <%= @place.name %>
+    <% else %>
+      <%= @open_time.place.name %>
+    <% end %>
+  </h3>
+
   <div class="field">
     <%= f.label :start_time %><br>
     <%= f.datetime_select :start_time %>
