@@ -16,10 +16,10 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.start_time %></td>
-        <td><%= booking.end_time %></td>
-        <td><%= booking.place %></td>
-        <td><%= booking.user %></td>
+        <td><%= booking.start_time.to_formatted_s(:long_ordinal) %></td>
+        <td><%= booking.end_time.to_formatted_s(:long_ordinal) %></td>
+        <td><%= booking.place.name %></td>
+        <td><%= "#{booking.guest.first_name} #{booking.guest.last_name}" %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
