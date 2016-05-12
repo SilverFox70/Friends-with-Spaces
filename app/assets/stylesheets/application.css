@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require bootstrap.min
+ *= require agency
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import url("//netda.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
