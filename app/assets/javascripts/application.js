@@ -19,5 +19,4 @@
 //= require contact_me
 //= require jqBootstrapValidation.js
 //= require bootstrap
-//= require bootstrap.min
 //= require_tree .
