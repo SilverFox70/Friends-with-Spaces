@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require bootstrap
 //= require agency
 //= require cbpAnimatedHeader
 //= require cbpAnimatedHeader.min
