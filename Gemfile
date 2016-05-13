@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+# For Heroku deployment
+gem 'rails_12factor', group: :production
+gem 'puma'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -7,6 +9,10 @@ gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Bootstrap SASS
+gem 'bootstrap-sass'
+
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -28,6 +34,9 @@ gem 'devise'
 
 # Use ActiveAdmin for site administration
 gem 'activeadmin', github: 'activeadmin'
+
+# Use Figaro for Environment variables
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
