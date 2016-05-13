@@ -213,7 +213,7 @@ fieldset[disabled] .btn-xl.active
 
 /* Background Image Goes below */
 header{
-  background-image:url(https://pixabay.com/static/uploads/photo/2015/11/07/21/29/living-1032733_960_720.jpg);
+  background-image:url('https://pixabay.com/static/uploads/photo/2015/11/07/21/29/living-1032733_960_720.jpg');
   background-repeat:none;
   background-attachment:scroll;
   background-position:center center;

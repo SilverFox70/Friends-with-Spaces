@@ -18,5 +18,4 @@
  */
 
  @import "bootstrap-sprockets";
- @import "bootstrap";
  @import url("//netda.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
