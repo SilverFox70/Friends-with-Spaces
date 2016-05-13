@@ -20,16 +20,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Our Story</a>
+                        <a class="page-scroll" href="#our-story">Our Story</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">How It Works</a>
+                        <a class="page-scroll" href="#how-it-works">How It Works</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#help">Help</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -47,13 +47,13 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To The Alpha Test!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <a href="#our-story" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
         </div>
     </header>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="our-story">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -91,7 +91,7 @@
     </section>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
+    <section id="how-it-works" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -228,20 +228,21 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
+    <section id="help" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">How To Help</h2>
+                    <h3 class="section-subheading text-muted">Be a part of what makes this a success!</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
+                        <%= image_tag("https://s3.amazonaws.com/railsblogframework/BBrinkert_468.jpg", alt: "the fox", class: 'img-circle img-responsive') %>
+                        <h4>SilverFox</h4>
                         <p class="text-muted">Lead Designer</p>
+                        <%#
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -250,47 +251,28 @@
                             <li><a href="#"><i class="fa fa-linkedin"></i></a>
                             </li>
                         </ul>
+                        %>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                
+                <div class="col-sm-8">
+                    <p class="large text-muted">A lot of time and effort has gone into building this web app, and by the time it has fully launched, a ton more will have gone into it. For the time being there are no plans to monetize this. This is <em>not</em> the next AirBnB or Uber for space. We are just trying to connect people in our community together to take advantage of all of the beautiful space that sits empty and unused so much of the time. This is my idea of the <strong>sharing</strong> economy: actually sharing resources. Of course, I think it is right and fair that "owners" would want to charge or barter for use of their space. Why not?</p>
+                    <h4>Donate Something!</h4>
+                    <p class="large text-muted">Donating a small amount of cash through PayPal helps. It takes time and effort to build this, to maintain it, and it will cost money out of pocket to set it up on a nice domain. Anything helps. (paypal to wfbrinkert@gmail.com)</p>
+                    <p class="large text-muted">If you have skills in HTML5, CSS3, Bootstrap, or Ruby-on-Rails and would like to become a part of this project, let me know! I could always use a hand.</p>
                 </div>
             </div>
+            <hr>
+            <%#
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
                 </div>
             </div>
+            %>
         </div>
     </section>
-
+    <%#
     <!-- Clients Aside -->
     <aside class="clients">
         <div class="container">
@@ -318,6 +300,7 @@
             </div>
         </div>
     </aside>
+    %>
     
     <!-- Contact Section -->
     <section id="contact">
@@ -325,9 +308,13 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">To help, to ask questions, to make suggestions...</h3>
+                </div>
+                <div class="col-lg-12 text-center">
+                  <h3 class="section-subheading text-muted">You can reach me at wfbrinkert@gmail.com</h3>
                 </div>
             </div>
+            <%#
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
@@ -361,6 +348,7 @@
                     </form>
                 </div>
             </div>
+            %>
         </div>
     </section>
 
@@ -368,8 +356,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                    <span class="copyright">Copyright &copy; William F Brinkert 2014</span>
                 </div>
+                <%#
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
@@ -388,6 +377,7 @@
                         </li>
                     </ul>
                 </div>
+                %>
             </div>
         </div>
     </footer>
@@ -462,93 +452,31 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                            <h2>Frequently Asked Questions</h2>
+                            <p class="item-intro text-muted">Important things to know.</p>
+                            <%= image_tag("https://openclipart.org/image/300px/svg_to_png/246941/Hands-Dangling-Keys-Silhouette.png", alt: "keys", class: 'img-responsive img-centered') %>
+                            
+                            <p><strong>When are you really launching?</strong></p>
+                            <p>We plan to be live for our Alpha tests at the very end of May. This means that things will be up and running, but we acknowledge it will be buggy and sometimes ugly. But that's what an alpha release is like. We will use the irst several weeks to gather data on how folks are using the site, and also to listen to feedback.  Expect a full bete release later this summer.</p>
+                            <p><strong>Isn't this just like those other "BnB" type sites?</strong></p>
+                            <p>No, not really. We are just iming to connect people together. We are not involved with any kind of "rental". We don't make any money off of folks sharing their spaces.</p>
+                            <hr>
+                            <p><strong>Can I share my space with people I don't know?</strong></p>
+                            <p>You could, but we don't recommend it. You should really only share your space with people that you feel you can trust.</p>
+                            <hr>
+                            <p><strong>What about liabilities, like theft or personal injury?</strong></p>
+                            <p>We don't make any money off of this. We don't sell anything. Think of this as a forum where you can find private space if you need it, and can share your private space with others. Because of this, we are not liable for anything that happens as a result of your using this site to engage in sharing spaces.</p>
+                            <hr>
+                            <p><strong>I rent my apartment, is it legal for me to use this site?</strong></p>
+                            <p>We can't answer that question because we don't know.  We have nothing to do with the details of your sharing your space with friends. Therefore, we are not liable if you do something - anything - that is in violation of lease or residency terms for your space.</p>
+                            <hr>
+                            <p><strong>How is this safe?  Can't criminals use this to go window shopping?</strong></p>
+                            <p>Is it safe?  That depends on whom you are sharing your space with, and that's not our call, so choose wisely.  That's why we call this "Friends with Spaces", not "Strangers Looking To Score" or something like that. Make deals with your friends and people you can trust.  As for "window shopping", we do not collect information on your address, so even if someone hacks us, they can never find what isn't here - namely, the address where you live. </p>
 
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
-                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
-                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            
+                            
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close FAQs</button>
                         </div>
                     </div>
                 </div>
