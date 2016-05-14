@@ -15,9 +15,15 @@
   <%= @place.location %>
 </p>
 
-<p>
+<div>
   <%= render partial: "open_times/form" %>  
-</p>
+</div>
+
+<div>
+  <%= month_calendar do |date| %>
+    <%= date %>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
