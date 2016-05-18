@@ -1,31 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Places</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
 
-  <tbody>
-    <% @places.each do |place| %>
-      <tr>
-        <td><%= place.name %></td>
-        <td><%= place.description %></td>
-        <td><%= place.location %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <h1>Listing Places</h1>
+
+  <div class="row">
+    <div class="col-lg-8">
+
+      <% @places.each do |place| %>
+        <!-- Info on Place -->
+        <p>Name: <%= place.name %></p>
+        <p>Location: <%= place.location %></p>
+        <div>Description: <%= simple_format(place.description) %></div>
+
+        <!-- Links -->
+        <div class='well'>
+          <%= link_to 'Show', place %>
+          <%= link_to 'Edit', edit_place_path(place) %>
+          <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?'} %>
+        </div><!-- /.well -->
+        
+        <hr>
+      <% end %>
+
+    </div><!-- /.col-lg-8 -->
+  </div><!-- /.row -->
+
+  <%= link_to 'New Place', new_place_path %>
+
+</div><!-- /.container -->
+
 
 <br>
 
-<%= link_to 'New Place', new_place_path %>
