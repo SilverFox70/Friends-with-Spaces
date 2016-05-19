@@ -10,6 +10,7 @@
 
       <% @places.each do |place| %>
         <!-- Info on Place -->
+        <%= image_tag("http://placehold.it/400x300", class: "img-responsive") %>
         <p>Name: <%= place.name %></p>
         <p>Location: <%= place.location %></p>
         <div>Description: <%= simple_format(place.description) %></div>
@@ -20,11 +21,24 @@
           <%= link_to 'Edit', edit_place_path(place) %>
           <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?'} %>
         </div><!-- /.well -->
-        
+
         <hr>
       <% end %>
 
     </div><!-- /.col-lg-8 -->
+
+    <div class="col-lg-4">
+      
+      <div class="well">
+        <h3>Search Well</h3>
+      </div>
+
+      <div class="well">
+        <h3>Other Well</h3>
+      </div>
+
+    </div>
+
   </div><!-- /.row -->
 
   <%= link_to 'New Place', new_place_path %>
