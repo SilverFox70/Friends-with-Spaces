@@ -7,6 +7,7 @@
     <tr>
       <th>Start time</th>
       <th>End time</th>
+      <th>ID</th>
       <th>Place</th>
       <th>User</th>
       <th colspan="3"></th>
@@ -18,10 +19,11 @@
       <tr>
         <td><%= open_time.start_time.to_formatted_s(:long_ordinal) %></td>
         <td><%= open_time.end_time.to_formatted_s(:long_ordinal) %></td>
+        <td><%= open_time.id %></td>
         <td><%= open_time.place.name %></td>
-        <td><%= link_to 'Show', open_time %></td>
-        <td><%= link_to 'Edit', edit_open_time_path(open_time) %></td>
-        <td><%= link_to 'Destroy', open_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', place_open_time_path(open_time.id, open_time.place_id) %></td>
+        <td><%= link_to 'Edit', "/#" %></td>
+        <td></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Open time', new_open_time_path %>
+<%= link_to 'New Open time', new_place_open_time_path %>
