@@ -21,11 +21,11 @@
 
   <div class="field">
     <%= f.label :start_time %><br>
-    <%= f.datetime_select :start_time %>
+    <%= f.datetime_select :start_time, default: @open_time.start_time %>
   </div>
   <div class="field">
     <%= f.label :end_time %><br>
-    <%= f.datetime_select :end_time %>
+    <%= f.datetime_select :end_time, default: @open_time.end_time %>
   </div>
   <div class="field">
     <%= f.hidden_field :place_id %>

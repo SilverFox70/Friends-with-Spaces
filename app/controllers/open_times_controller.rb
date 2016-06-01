@@ -1,5 +1,11 @@
 class OpenTimesController < InheritedResources::Base
 
+  def edit
+    @place = Place.find_by_id(params[:place_id])
+    @open_time = OpenTime.find_by_id(params[:id])
+    render "edit"
+  end
+
   private
 
     def open_time_params

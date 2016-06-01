@@ -21,7 +21,7 @@
         <td><%= open_time.end_time.to_formatted_s(:long_ordinal) %></td>
         <td><%= open_time.id %></td>
         <td><%= open_time.place.name %></td>
-        <td><%= link_to 'Show', place_open_time_path(open_time.id, open_time.place_id) %></td>
+        <td><%= link_to 'Show', place_open_time_path(open_time.place_id, open_time.id) %></td>
         <td><%= link_to 'Edit', "/#" %></td>
         <td></td>
       </tr>
