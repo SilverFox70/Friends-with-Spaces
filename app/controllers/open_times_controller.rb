@@ -13,7 +13,8 @@ class OpenTimesController < InheritedResources::Base
   def create
     @place = Place.find(params[:place_id])
     @open_time = @place.open_times.create(open_time_params)
-    render "show"
+    @open_times = @place.open_times.all
+    render "places/show"
   end
 
   def edit
@@ -22,12 +23,22 @@ class OpenTimesController < InheritedResources::Base
     render "edit"
   end
 
+  def update
+    @open_time = OpenTime.find_by_id(params[:id])
+    if @open_time.update(open_time_params)
+      redirect_to :back
+    else
+      render :edit
+    end
+  end
+
   def destroy
     ot = OpenTime.find(params[:id])
     p = Place.find(params[:place_id])
     ot.destroy
-    @open_times = OpenTime.all
-    render 'index'
+    @place = Place.find_by_id(params[:place_id])
+    @open_times = @place.open_times.all
+    render 'places/show'
   end
 
   private
