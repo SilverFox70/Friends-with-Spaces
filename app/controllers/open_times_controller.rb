@@ -24,9 +24,11 @@ class OpenTimesController < InheritedResources::Base
   end
 
   def update
+    @place = Place.find_by_id(params[:place_id])
     @open_time = OpenTime.find_by_id(params[:id])
     if @open_time.update(open_time_params)
-      redirect_to :back
+      @open_times = @place.open_times.all
+      render "places/show"  
     else
       render :edit
     end

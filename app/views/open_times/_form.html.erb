@@ -1,4 +1,4 @@
-<%= form_for([@place, @place.open_times.build]) do |f| %>
+<%= form_for([@place, @open_time]) do |f| %>
   <% if !@open_time.nil? && @open_time.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@open_time.errors.count, "error") %> prohibited this open_time from being saved:</h2>
@@ -12,11 +12,7 @@
   <% end %>
   <h3>
     Set Available times for:
-    <% if @open_time.nil? %>
-      <%= @place.name %>
-    <% else %>
-      <%= @open_time.place.name %>
-    <% end %>
+    <%= @place.name %>
   </h3>
 
   <div class="field">
