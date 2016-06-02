@@ -18,6 +18,14 @@ class OpenTimesController < InheritedResources::Base
     render "edit"
   end
 
+  def destroy
+    ot = OpenTime.find(params[:id])
+    p = Place.find(params[:place_id])
+    ot.destroy
+    @open_times = OpenTime.all
+    render 'index'
+  end
+
   private
 
     def open_time_params
