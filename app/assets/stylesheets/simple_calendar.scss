@@ -80,3 +80,19 @@
 .month-name {
   font-size: 2em;
 }
+
+.open-time {
+  text-decoration: none !important;
+  background-color: #00CCCC;
+}
+
+.open-time:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+.date-field {
+  text-decoration: none;
+}
+
+

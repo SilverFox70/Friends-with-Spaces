@@ -2,7 +2,11 @@ class OpenTimesController < InheritedResources::Base
 
   def new
     @place = Place.find(params[:place_id])
-    @open_time = @place.open_times.new()
+    @open_time = @place.open_times.new
+    if params[:this_day]
+      @open_time.start_time = params[:this_day]
+      @open_time.end_time = params[:this_day]
+    end
     render "new"
   end
 
