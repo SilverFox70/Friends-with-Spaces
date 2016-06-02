@@ -10,18 +10,24 @@
         <%= simple_format(@place.description) %>
       </p>
 
-      <h4 class="service-heading">Location:</h4>
-      <p>
-        <%= @place.location %>
-      </p>
-
+      <h4 class="service-heading">Location: <%= @place.location %></h4>
+     
       <div>
-        <%= render partial: "open_times/form" %>  
       </div>
-
+     
       <div>
-        <%= month_calendar do |date| %>
-          <%= date %>
+        <%= month_calendar events: @open_times do |date, open_times| %>
+          <%= link_to "#{date}", new_place_open_time_path(@place, this_day: date), class: "date-field" %>
+          <% open_times.each do |open_time| %>
+            <a href="/places/<%= open_time.place_id %>/open_times/<%= open_time.id%>/edit">
+              <div class="open-time">
+                <strong>
+                  <%= open_time.start_time.strftime("%I:%M%p") %> - 
+                  <%= open_time.end_time.strftime("%I:%M%p") %>
+                </strong>
+              </div>
+            </a>  
+          <% end %>
         <% end %>
       </div>
 
