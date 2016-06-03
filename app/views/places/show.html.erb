@@ -4,7 +4,7 @@
       <p id="notice"><%= notice %></p>
 
       <h2><%= @place.name %></h2>
-
+      <%= @place.user.user_profile.first_name %>
       <h4 class="service-heading">Description:</h4>
       <p>
         <%= simple_format(@place.description) %>
