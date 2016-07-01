@@ -1,5 +1,10 @@
 class BookingsController < InheritedResources::Base
 
+  def new
+    render :new
+  end
+
+
   private
 
     def booking_params

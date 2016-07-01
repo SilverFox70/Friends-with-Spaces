@@ -27,3 +27,14 @@ body {
 .nav.navbar.navbar-default.navbar-fixed-top {
 	padding: 10px 25px 10px 25px !important;
 }
+
+.clr-cyan {
+	background-color: cyan;
+}
+
+.clr-khaki {
+	background-color: DarkKhaki;
+}
+.clr-orange {
+	background-color: DarkOrange;
+}
