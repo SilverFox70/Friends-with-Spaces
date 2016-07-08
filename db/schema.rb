@@ -90,9 +90,9 @@ ActiveRecord::Schema.define(version: 20160428222822) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "guest_id"
+    t.integer  "place_id"
     t.text     "body"
     t.integer  "rating"
-    t.integer  "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
