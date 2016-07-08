@@ -10,7 +10,11 @@
 
       <% @places.each do |place| %>
         <!-- Info on Place -->
-        <%= image_tag(@pictures[place.id].first.img_url, class: "img-responsive") %>
+        <% if @pictures.empty? %>
+          <%= image_tag("http://placehold.it/600x400", class: "img-responsive") %>
+        <% else %>
+          <%= image_tag(@pictures[place.id].first.img_url, class: "img-responsive") %>
+        <% end %>
         <p>Name: <%= place.name %></p>
         <p>Location: <%= place.location %></p>
         <div>Description: <%= simple_format(place.description) %></div>
