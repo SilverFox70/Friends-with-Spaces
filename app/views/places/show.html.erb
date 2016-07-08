@@ -4,7 +4,8 @@
       <p id="notice"><%= notice %></p>
 
       <h2><%= @place.name %></h2>
-      <%= @place.user.user_profile.first_name %>
+      Owner: <%= @place.user.user_profile.first_name %>
+      <%= image_tag(@picture.img_url, class: "img-responsive") %>
       <h4 class="service-heading">Description:</h4>
       <p>
         <%= simple_format(@place.description) %>
