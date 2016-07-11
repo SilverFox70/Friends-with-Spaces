@@ -1,6 +1,9 @@
-<h1>Editing Picture</h1>
+<div class="container">  
+  <h1>Editing Picture</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @picture %> |
-<%= link_to 'Back', pictures_path %>
+  <%= link_to 'Delete', "places/#{@place.id}/pictures/#{@picture.id}", method: :delete, class: "btn btn-danger", confirm: "Are you sure?" %> |
+  <%= link_to 'Show', place_picture_path(@picture.place_id, @picture.id) %> |
+  <%= link_to 'Back', place_path(@place.id) %>
+</div>
