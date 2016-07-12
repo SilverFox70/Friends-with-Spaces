@@ -10,7 +10,7 @@
 
       <% @places.each do |place| %>
         <!-- Info on Place -->
-        <% if @pictures.empty? %>
+        <% if @pictures[place.id].empty? || @pictures[place.id].nil? %>
           <%= image_tag("http://placehold.it/600x400", class: "img-responsive") %>
         <% else %>
           <%= image_tag(@pictures[place.id].first.img_url, class: "img-responsive") %>
@@ -44,8 +44,9 @@
     </div>
 
   </div><!-- /.row -->
-
-  <%= link_to 'New Place', new_place_path %>
+  <% if current_user %>
+    <%= link_to 'New Place', new_place_path %>
+  <% end %>  
 
 </div><!-- /.container -->
 
