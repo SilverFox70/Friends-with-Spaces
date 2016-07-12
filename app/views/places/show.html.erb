@@ -28,9 +28,14 @@
       <h3>Availability</h3>
       <div>
         <%= month_calendar events: @open_times do |date, open_times| %>
-          <%= link_to "#{date}", new_place_open_time_path(@place, this_day: date), class: "date-field" %>
+          <% if is_owner? %>
+            <%= link_to "#{date}", new_place_open_time_path(@place, this_day: date), class: "date-field" %>
+          <% else %>
+            <%= date %>
+          <% end %>
           <% open_times.each do |open_time| %>
-            <a href="/places/<%= open_time.place_id %>/open_times/<%= open_time.id%>/edit">
+            <% if is_owner? %>
+              <a href="/places/<%= open_time.place_id %>/open_times/<%= open_time.id%>/edit">
               <div class="open-time">
                 <strong>
                   <%= open_time.start_time.strftime("%I:%M%p") %> - 
@@ -38,6 +43,14 @@
                 </strong>
               </div>
             </a>  
+            <% else %>
+              <div class="open-time">
+                <strong>
+                  <%= open_time.start_time.strftime("%I:%M%p") %> - 
+                  <%= open_time.end_time.strftime("%I:%M%p") %>
+                </strong>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
