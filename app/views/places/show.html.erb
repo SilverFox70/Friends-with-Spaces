@@ -5,7 +5,9 @@
 
       <h2><%= @place.name %></h2>
       Owner: <%= @place.user.user_profile.first_name %>
-      <%= image_tag(@picture.img_url, class: "img-responsive") %>
+      <a href="/places/<%= @place.id %>/pictures/<%= @picture.id %>">
+        <%= image_tag(@picture.img_url, class: "img-responsive") %>
+      </a>
       <h4 class="service-heading">Description:</h4>
       <p>
         <%= simple_format(@place.description) %>

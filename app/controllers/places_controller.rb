@@ -9,7 +9,20 @@ class PlacesController < InheritedResources::Base
   end
 
   def new
-    @place = Place.new
+    if current_user
+      @place = Place.new
+    else
+      redirect_to 'index'
+    end
+  end
+
+  def create
+    @place = Place.new(place_params)
+    if @place.save
+      render 'show'
+    else
+      render 'new'
+    end
   end
 
   def show
