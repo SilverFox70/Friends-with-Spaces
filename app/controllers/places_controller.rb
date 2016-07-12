@@ -18,7 +18,10 @@ class PlacesController < InheritedResources::Base
 
   def create
     @place = Place.new(place_params)
+    @place.owner_id = current_user.id 
     if @place.save
+      flash[:notice] = "Place successfully created!"
+      @open_times = @place.open_times.create
       render 'show'
     else
       render 'new'
