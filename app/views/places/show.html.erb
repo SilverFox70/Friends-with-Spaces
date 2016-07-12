@@ -7,6 +7,9 @@
       Owner: <%= @place.user.user_profile.first_name %>
       <% if @picture.nil? %>
         <%= image_tag("http://placehold.it/600x400", class: "img-responsive") %>
+      <% elsif @place.owner_id == current_user.id %>
+        <%= image_tag(@picture.img_url, class: "img-responsive") %>
+        <%= link_to 'Edit Pictures', edit_place_picture_path(@place, @picture), class: "btn btn-default" %>
       <% else %>
         <a href="/places/<%= @place.id %>/pictures/<%= @picture.id %>">
           <%= image_tag(@picture.img_url, class: "img-responsive") %>

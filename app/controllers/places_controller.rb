@@ -21,7 +21,9 @@ class PlacesController < InheritedResources::Base
     @place.owner_id = current_user.id 
     if @place.save
       flash[:notice] = "Place successfully created!"
-      @open_times = @place.open_times.create
+      @open_times = @place.open_times
+      # Currently only return the first picture
+      @picture = @place.pictures.first
       render 'show'
     else
       render 'new'
@@ -30,6 +32,7 @@ class PlacesController < InheritedResources::Base
 
   def show
     @place = Place.find(params[:id])
+    # Currently only return the first picture
     @picture = @place.pictures.first
     @open_times = @place.open_times.all
     render 'show'
@@ -39,6 +42,8 @@ class PlacesController < InheritedResources::Base
     @place = Place.find(params[:id])
     @pictures = @place.pictures.all
   end
+
+
 
   private
 
