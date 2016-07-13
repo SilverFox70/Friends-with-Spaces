@@ -35,6 +35,9 @@ class PlacesController < InheritedResources::Base
     # Currently only return the first picture
     @picture = @place.pictures.first
     @open_times = @place.open_times.all
+    puts "*" * 30
+    puts @open_times
+    puts "*" * 30
     render 'show'
   end
 

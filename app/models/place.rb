@@ -12,5 +12,7 @@ class Place < ActiveRecord::Base
   def build_default_resources
   	self.open_times.create
   	self.pictures.create(img_url: "http://placehold.it/600x400")
+  	self.bookings.create
+  	self.reviews.create
   end
 end

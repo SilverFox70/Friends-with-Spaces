@@ -1,4 +1,5 @@
 class OpenTimesController < InheritedResources::Base
+  before_action :is_authorized?
 
   def new
     @place = Place.find(params[:place_id])
@@ -12,7 +13,7 @@ class OpenTimesController < InheritedResources::Base
 
   def create
     @place = Place.find(params[:place_id])
-    @open_time = @place.open_times.create(open_time_params)
+    open_time = @place.open_times.create(open_time_params)
     @open_times = @place.open_times.all
     render "places/show"
   end
@@ -47,6 +48,13 @@ class OpenTimesController < InheritedResources::Base
 
     def open_time_params
       params.require(:open_time).permit(:start_time, :end_time, :place_id, :user_id)
+    end
+
+    def is_authorized?
+      place = Place.find(params[:place_id])
+      unless place.owner_id == current_user.id  
+        redirect_to :places
+      end
     end
 end
 
