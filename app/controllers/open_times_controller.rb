@@ -13,7 +13,7 @@ class OpenTimesController < InheritedResources::Base
 
   def create
     @place = Place.find(params[:place_id])
-    @open_time = @place.open_times.create(open_time_params)
+    open_time = @place.open_times.create(open_time_params)
     @open_times = @place.open_times.all
     render "places/show"
   end
