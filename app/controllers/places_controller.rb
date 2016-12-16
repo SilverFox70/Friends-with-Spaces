@@ -36,7 +36,7 @@ class PlacesController < InheritedResources::Base
     @picture = @place.pictures.first
     @open_times = @place.open_times.all
     puts "*" * 30
-    puts @open_times
+    puts @open_times.inspect
     puts "*" * 30
     render 'show'
   end
