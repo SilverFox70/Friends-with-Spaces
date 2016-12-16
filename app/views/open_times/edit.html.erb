@@ -1,9 +1,13 @@
-<h1>Editing Open Time</h1>
+<div class="container">
+	<h1>Editing Open Time</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
+
 
 <hr>
 <%= link_to "Convert to Booking", "/places/#{@place.id}/bookings?#{@open_time}", action: :create, method: :post, class: "btn btn-primary" %> |
 <%= link_to 'Delete', "/places/#{@place.id}/open_times/#{@open_time.id}", method: :delete, class: "btn btn-danger",confirm: "Are you sure?" %> | 
 <%= link_to 'Show', place_open_time_path(@open_time.place_id, @open_time.id), class: "btn btn-default" %> |
 <%= link_to 'Back', place_path(@place.id), class: "btn btn-default" %>
+
+</div><!-- .container -->

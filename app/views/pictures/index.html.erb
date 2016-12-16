@@ -18,9 +18,9 @@
         <td><%= image_tag(picture.img_url, size: "64" ) %></td>
         <td><%= picture.img_url %></td>
         <td><%= picture.place.name %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@place, picture] %></td>
+        <td><%= link_to 'Edit', edit_place_picture_path(@place, picture) %></td>
+        <td><%= link_to 'Destroy', [@place, picture], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Picture', new_picture_path %>
+<%= link_to 'New Picture', new_place_picture_path %>

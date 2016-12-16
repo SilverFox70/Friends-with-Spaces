@@ -4,7 +4,17 @@
       <p id="notice"><%= notice %></p>
 
       <h2><%= @place.name %></h2>
-      <%= @place.user.user_profile.first_name %>
+      Owner: <%= @place.user.user_profile.first_name %>
+      <% if @picture.nil? %>
+        <%= image_tag("http://placehold.it/600x400", class: "img-responsive") %>
+      <% elsif @place.owner_id == current_user.id %>
+        <%= image_tag(@picture.img_url, class: "img-responsive") %>
+        <%= link_to 'Edit Pictures', edit_place_picture_path(@place, @picture), class: "btn btn-default" %>
+      <% else %>
+        <a href="/places/<%= @place.id %>/pictures/<%= @picture.id %>">
+          <%= image_tag(@picture.img_url, class: "img-responsive") %>
+        </a>
+      <% end %>
       <h4 class="service-heading">Description:</h4>
       <p>
         <%= simple_format(@place.description) %>
@@ -20,12 +30,18 @@
           <span class="clr-orange">Your Booking</span> 
         </p>
       </div>
-     
+      <hr>
+      <h3>Availability</h3>
       <div>
         <%= month_calendar events: @open_times do |date, open_times| %>
-          <%= link_to "#{date}", new_place_open_time_path(@place, this_day: date), class: "date-field" %>
+          <% if is_owner? %>
+            <%= link_to "#{date}", new_place_open_time_path(@place, this_day: date), class: "date-field" %>
+          <% else %>
+            <%= date %>
+          <% end %>
           <% open_times.each do |open_time| %>
-            <a href="/places/<%= open_time.place_id %>/open_times/<%= open_time.id%>/edit">
+            <% if is_owner? %>
+              <a href="/places/<%= open_time.place_id %>/open_times/<%= open_time.id%>/edit">
               <div class="open-time">
                 <strong>
                   <%= open_time.start_time.strftime("%I:%M%p") %> - 
@@ -33,6 +49,14 @@
                 </strong>
               </div>
             </a>  
+            <% else %>
+              <div class="open-time">
+                <strong>
+                  <%= open_time.start_time.strftime("%I:%M%p") %> - 
+                  <%= open_time.end_time.strftime("%I:%M%p") %>
+                </strong>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
@@ -40,5 +64,16 @@
       <%= link_to 'Edit', edit_place_path(@place) %> |
       <%= link_to 'Back', places_path %>
     </div><!-- /.col-lg-8 -->
+    <div class="col-lg-4">
+      
+      <div class="well">
+        <h3>Search Well</h3>
+      </div>
+
+      <div class="well">
+        <h3>Other Well</h3>
+      </div>
+
+    </div>
   </div><!-- /.row -->
 </div><!-- /.container -->

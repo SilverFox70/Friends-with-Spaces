@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="container"> 
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Img url:</strong>
-  <%= @picture.img_url %>
-</p>
+  <p>
+    <strong>Place:</strong>
+    <%= @picture.place.name %>
+  </p>
+  <p>
+    <strong>Img url:</strong>
+    <%= @picture.img_url %>
+  </p>
+  <% if @picture.img_url %>
+      <%= image_tag(@picture.img_url, class: "img-responsive") %>
+  <% end %>
 
-<p>
-  <strong>Place:</strong>
-  <%= @picture.place %>
-</p>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+  <%= link_to 'Edit', edit_place_picture_path(@picture.place_id, @picture.id) %> |
+  <%= link_to 'Back', place_path(@picture.place_id) %>
+</div>

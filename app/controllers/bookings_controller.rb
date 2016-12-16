@@ -4,6 +4,10 @@ class BookingsController < InheritedResources::Base
     render :new
   end
 
+  def create
+    
+  end
+
 
   private
 
