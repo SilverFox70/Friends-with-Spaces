@@ -5,7 +5,7 @@ class BookingsController < InheritedResources::Base
   end
 
   def create
-    
+    # TO DO: create this template to handle converting open_times to a booking
   end
 
 
